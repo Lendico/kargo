@@ -1,4 +1,7 @@
 ---
+- include: ../cluster/unseal.yml
+  when: inventory_hostname in groups.vault and
+        vault_is_initialized and vault_is_sealed
 
 - name: find_leader | Find the current http Vault leader
   uri:
