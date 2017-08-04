@@ -88,3 +88,4 @@ vault_temp_config:
       tls_disable: "true"
 vault_temp_container_name: vault-temp
 vault_version: 0.7.3
+vault_leader_url: "localhost"
