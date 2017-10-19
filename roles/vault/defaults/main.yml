@@ -36,7 +36,7 @@ vault_config:
 vault_config_dir: "{{ vault_base_dir }}/config"
 vault_container_name: kube-hashicorp-vault
 # This variable is meant to match the GID of vault inside Hashicorp's official Vault Container
-vault_default_lease_ttl: 720h
+vault_default_lease_ttl: 8640h
 vault_default_role_permissions:
   allow_any_name: true
 vault_deployment_type: docker
@@ -79,6 +79,7 @@ vault_secret_threshold: 1
 vault_secrets_dir: "{{ vault_base_dir }}/secrets"
 vault_temp_config:
   default_lease_ttl: "{{ vault_default_lease_ttl }}"
+  max_lease_ttl: "{{ vault_max_lease_ttl }}"
   backend:
     file:
       path: /vault/file
